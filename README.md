@@ -1,9 +1,10 @@
 ﻿KERA_PING
 ==
-- API key (Json format)
+### API key (Json format)
   - `src/user_data.json`
 ``` json
 {
+  "target": "XXXX",
   "c_k": "XXXX",
   "c_s": "XXXX",
   "a_t": "XXXX",
@@ -11,11 +12,11 @@
 
 }
 ```
-- init
+### init
 ``` bash
 % rake init
 ```
-- run
+### run
 ``` bash
 % rake start
 ```

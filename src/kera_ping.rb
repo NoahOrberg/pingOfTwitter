@@ -4,13 +4,14 @@ require "date"
 
 class Kera
   def initialize
-    id = "" # target id
     ENV['TZ']= "Asia/Tokyo"
 
     j_file= "./src/user_data.json"
     key= open(j_file) do |io|
       JSON.load(io)
     end
+
+    id = key["target"] # target
 
     client=Twitter::REST::Client.new do |config|
         config.consumer_key= key["c_k"]
@@ -26,7 +27,7 @@ class Kera
       tweet = client.user_timeline(id, {max_id:max_id-1,count:1})[0]
     end
     if Time.now - tweet.created_at >= 300.0 then
-      client.update("@"+id+" 浮上してないけど大丈夫?") # message
+      client.update(id+" 浮上してないけど大丈夫?") # message
     end
   end
 end
