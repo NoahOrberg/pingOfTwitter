@@ -4,7 +4,7 @@
   - `src/user_data.json`
 ``` json
 {
-  "target": "XXXX",
+  "target": "@XXXX",
   "c_k": "XXXX",
   "c_s": "XXXX",
   "a_t": "XXXX",
